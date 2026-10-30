@@ -16,14 +16,14 @@ import { formatDate, truncate } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'Home — Preserving Sri Lanka’s Intangible Cultural Heritage',
   description:
-    'Intangible Heritage Sri Lanka — Documenting, preserving and celebrating traditional Art, Crafts, Brassware, Masks, Hela Wedakama & Ayurveda, Cultural Landscapes, and Perahera Festivals.',
+    'Intangible Heritage Sri Lanka — Documenting, preserving and celebrating traditional Art, Crafts, Brassware, Masks, Traditional Medicine, Rituals, Cultural Landscapes, and Perahera Festivals.',
 };
 
 const STATS = [
   { value: '2,500+', label: 'Years of Heritage', desc: 'Living island cultural lineages' },
-  { value: '7 Domains', label: 'Main Categories', desc: 'Crafts, masks, ayurveda & arts' },
+  { value: '8 Domains', label: 'Main Categories', desc: 'Crafts, masks, medicine & rituals' },
   { value: '1,200+', label: 'Documented Traditions', desc: 'Sacred texts & living rituals' },
-  { value: '350+',   label: 'Conserved Artifacts', desc: 'Traditional lamps, tools & masks' },
+  { value: '500+',   label: 'Conserved Artifacts', desc: 'Traditional lamps, tools & masks' },
 ];
 
 const CORE_FOCUS_AREAS = [
@@ -31,9 +31,10 @@ const CORE_FOCUS_AREAS = [
   { icon: '🧵', label: 'Crafts', desc: 'Hereditary handicrafts, Dumbara reed mat weaving, handloom textiles, wood carving, and traditional pottery.' },
   { icon: '🪔', label: 'Brassware', desc: 'Kandyan brass casting, standing ceremonial oil lamps (Pahana), ritual offering vessels, and lost-wax metallurgy.' },
   { icon: '🎭', label: 'Masks', desc: 'Ambalangoda folk masks, Raksha guardian masks, traditional Kolam theatre, and therapeutic Sanni Yakuma masks.' },
-  { icon: '🌿', label: 'Ayurveda', desc: 'Ancient Hela Wedakama indigenous medicine, royal hospital ruins, palm-leaf medical texts, and medicated herbal oils.' },
+  { icon: '🌿', label: 'Traditional Medicine', desc: 'Ancient Hela Wedakama indigenous medicine, royal hospital ruins, palm-leaf medical texts, and medicated herbal oils.' },
+  { icon: '🕯️', label: 'Rituals', desc: 'Ancient Kohomba Kankariya, Shanthikarma healing ceremonies, Bali Thovil rites, and sacred communal blessings.' },
   { icon: '🏞️', label: 'Heritage Landscapes', desc: 'Ancient hydraulic systems, Sigiriya water gardens, Ritigala forest monasteries, and sacred mountain ecosystems.' },
-  { icon: '🥁', label: 'Perahera & Festivals', desc: 'The historic Kandy Esala Perahera, sacred tooth relic processions, ritual Ves dance, drumming, and folk festivals.' },
+  { icon: '🥁', label: 'Events & Festivals', desc: 'The historic Kandy Esala Perahera, sacred tooth relic processions, ritual Ves dance, drumming, and folk festivals.' },
 ];
 
 import CuratedVitrineHero from '@/components/CuratedVitrineHero';
@@ -41,7 +42,7 @@ import SectionBackground from '@/components/decorations/SectionBackground';
 
 export default function HomePage() {
   const categories = categoriesData as HeritageCategoryItem[];
-  // Featured exhibits: show Ayurveda highlights plus new categories
+  // Featured exhibits: show Traditional Medicine highlights plus new categories
   const featured = (museumData as MuseumItem[]).slice(0, 8);
   const upcoming = (eventsData as Event[]).filter(e => e.status === 'upcoming').slice(0, 3);
   const latest = (articlesData as Article[]).slice(0, 3);
@@ -79,9 +80,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Seven Main Heritage Categories (Image Cards) ────────── */}
+      {/* ── Core Heritage Categories (Image Cards) ────────── */}
       <section
-        aria-label="Seven Heritage Categories"
+        aria-label="Eight Heritage Categories"
         className="heritage-section-relative"
         style={{ background: '#fff', paddingBlock: '5rem' }}
       >
@@ -101,7 +102,7 @@ export default function HomePage() {
             }}>
               Explore Our Living Heritage
             </p>
-            <h2 className="section-title">Seven Main Heritage Categories</h2>
+            <h2 className="section-title">Eight Main Heritage Categories</h2>
             <p style={{ color: 'var(--color-secondary)', fontSize: '0.98rem', marginTop: '0.5rem', lineHeight: 1.7 }}>
               Discover the profound cultural tapestry of Sri Lanka across visual arts, master craft traditions, sacred metallurgy, ritual masks, holistic healing, sacred topography, and festive spectacles.
             </p>
@@ -404,7 +405,7 @@ export default function HomePage() {
               }}>
                 Education & Programs
               </p>
-              <h2 className="section-title">Upcoming Heritage Programs & Events</h2>
+              <h2 className="section-title">Heritage Programs & Events</h2>
             </div>
             <Link href="/events" className="btn-secondary" id="home-events-link">
               All Events & Workshops <ArrowRight size={15} />
@@ -484,7 +485,7 @@ export default function HomePage() {
               }}>
                 Scientific & Cultural Research
               </p>
-              <h2 className="section-title">Latest Heritage Publications</h2>
+              <h2 className="section-title">Latest Publications</h2>
             </div>
             <Link href="/research" className="btn-secondary" id="home-research-link">
               View All Publications <ArrowRight size={15} />

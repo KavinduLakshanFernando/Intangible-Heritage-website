@@ -100,7 +100,7 @@ export default function CuratedVitrineHero() {
                 textTransform: 'uppercase',
               }}
             >
-              National Repository for Living Traditions
+              Repository for Living Traditions
             </span>
           </div>
 
@@ -128,7 +128,7 @@ export default function CuratedVitrineHero() {
           <p className="hero-statement-desktop">
             Explore the sacred continuum of Sri Lanka’s cultural knowledge. Discover ancient palm-leaf
             pharmacopeia, ceremonial brass casting, sacred temple frescoes, and vibrant mask theatre curated directly
-            from hereditary living masters across seven cultural sanctuaries.
+            from hereditary living masters across eight cultural sanctuaries.
           </p>
 
           {/* Curated Statement (Mobile version: concise & punchy to reduce cognitive clutter) */}

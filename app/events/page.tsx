@@ -14,7 +14,7 @@ import SectionBackground from '@/components/decorations/SectionBackground';
 export const metadata: Metadata = {
   title: 'Events & Exhibitions — Cultural Workshops, Symposia & Masterclasses',
   description:
-    'Upcoming and past cultural heritage exhibitions, traditional art workshops, brass casting forums, Ayurveda masterclasses, and Perahera events in Sri Lanka.',
+    'Upcoming and past cultural heritage exhibitions, traditional art workshops, brass casting forums, traditional medicine masterclasses, and Perahera events in Sri Lanka.',
 };
 
 function EventCard({ event }: { event: Event }) {

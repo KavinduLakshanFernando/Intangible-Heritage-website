@@ -35,7 +35,7 @@ export async function POST(request: Request) {
       image: event.image || '/images/perahera-festival.jpg',
       status: event.status || 'upcoming',
       category: event.category || 'General',
-      heritageCategory: event.heritageCategory || 'Perahera & Festivals',
+      heritageCategory: event.heritageCategory || 'Events & Festivals',
     };
 
     events.push(newEvent);

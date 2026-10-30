@@ -102,11 +102,11 @@ export default function ContactPage() {
                 {[
                   {
                     icon: MapPin, label: 'Address',
-                    content: 'No. 12, Sri Jayawardenepura Mawatha\nNugegoda, Colombo\nSri Lanka',
+                    content: '116, D. S. Senanayake Mawatha\nColombo 08\nSri Lanka',
                   },
                   {
                     icon: Phone, label: 'Phone',
-                    content: '+94 11 234 5678\n+94 77 123 4567',
+                    content: '077 340 9787\n071 431 0000\n(+94 77 340 9787 / +94 71 431 0000)',
                   },
                   {
                     icon: Mail, label: 'Email',
@@ -114,7 +114,7 @@ export default function ContactPage() {
                   },
                   {
                     icon: Clock, label: 'Opening Hours',
-                    content: 'Monday – Friday: 9:00 am – 5:00 pm\nSaturday: 9:00 am – 1:00 pm\nSunday & Poya: Closed',
+                    content: 'By Appointment Only\n(Prior booking required)',
                   },
                 ].map(({ icon: Icon, label, content }) => (
                   <div key={label} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
@@ -165,25 +165,6 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Map placeholder */}
-              <div style={{
-                marginTop: '2rem', borderRadius: '0.75rem', overflow: 'hidden',
-                border: '1.5px solid var(--color-brown-100)', aspectRatio: '16/9',
-                background: 'var(--color-brown-50)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                flexDirection: 'column', gap: '0.5rem',
-              }}>
-                <MapPin size={32} style={{ color: 'var(--color-accent)' }} />
-                <p style={{ color: 'var(--color-secondary)', fontSize: '0.85rem', textAlign: 'center', padding: '0 1rem' }}>
-                  <strong>Embedded Google Map</strong><br />
-                  Replace this block with a Google Maps embed iframe.<br />
-                  Use your Google Maps Embed API key.
-                </p>
-                <a href="https://maps.google.com/?q=Nugegoda,Colombo,Sri+Lanka" target="_blank" rel="noopener noreferrer"
-                  className="btn-primary" style={{ fontSize: '0.82rem', padding: '0.4rem 1rem' }}>
-                  Open in Google Maps
-                </a>
-              </div>
             </div>
 
             {/* ── Contact form ─────────────────────────── */}
