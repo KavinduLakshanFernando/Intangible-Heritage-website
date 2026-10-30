@@ -7,6 +7,7 @@
  *    plus an interactive "More" slide-up drawer for secondary pages & category navigation.
  */
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import {
@@ -22,25 +23,35 @@ import {
   BookOpen,
   Phone,
   ShieldCheck,
+  MessageCircle,
 } from 'lucide-react';
 import { useCart } from './CartContext';
+import { buildWhatsAppUrl, formatLKR } from '@/lib/utils';
 
 const MUSEUM_CATEGORIES = [
   { name: 'Art', icon: '🎨' },
   { name: 'Crafts', icon: '🧵' },
   { name: 'Brassware', icon: '🪔' },
   { name: 'Masks', icon: '🎭' },
-  { name: 'Ayurveda', icon: '🌿' },
+  { name: 'Traditional Medicine', icon: '🌿' },
+  { name: 'Rituals', icon: '🕯️' },
   { name: 'Heritage Landscapes', icon: '🏞️' },
   { name: 'Perahera & Festivals', icon: '🥁' },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { totalItems } = useCart();
+  const { items, totalItems, totalPrice } = useCart();
   const [museumHovered, setMuseumHovered] = useState(false);
+  const [cartHovered, setCartHovered] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // WhatsApp bulk order URL
+  const whatsappBulkUrl = buildWhatsAppUrl(
+    items.map(i => ({ name: i.name, quantity: i.quantity, price: i.price })),
+    totalPrice
+  );
 
   // Add scrolled class for sticky header shadow
   useEffect(() => {
@@ -49,16 +60,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
-  // Close "More" drawer on route change
+  // Close "More" drawer & hover menus on route change
   useEffect(() => {
     setMoreOpen(false);
     setMuseumHovered(false);
+    setCartHovered(false);
   }, [pathname]);
 
   // Determine active states
   const isHomeActive = pathname === '/';
   const isMuseumActive = pathname.startsWith('/museum');
   const isShopActive = pathname.startsWith('/shop');
+  const isCartActive = pathname.startsWith('/cart');
   const isEventsActive = pathname.startsWith('/events');
   const isResearchActive = pathname.startsWith('/research');
   const isAboutActive = pathname.startsWith('/about');
@@ -78,31 +91,63 @@ export default function Navbar() {
           style={{
             background: '#2E1B0E',
             color: '#FAF6F0',
-            fontSize: '0.76rem',
-            paddingBlock: '0.35rem',
+            fontSize: '0.74rem',
+            paddingBlock: '0.4rem',
             borderBottom: '1px solid rgba(201, 166, 107, 0.25)',
+            width: '100%',
           }}
         >
           <div
-            className="container-site"
             style={{
+              width: '100%',
+              maxWidth: '1480px',
+              marginInline: 'auto',
+              paddingInline: '1.25rem',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
+              whiteSpace: 'nowrap',
+              gap: '1rem',
             }}
           >
-            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
-              <span className="hidden-mobile">🌿 National Repository for Sri Lankan Intangible Cultural Heritage</span>
-              <span className="mobile-only-topbar">🌿 Sri Lanka Intangible Cultural Heritage</span>
-              <span className="hidden-mobile" style={{ color: 'var(--color-accent)' }}>•</span>
-              <span className="hidden-mobile">Art · Crafts · Brassware · Masks · Ayurveda · Landscapes · Festivals</span>
+            <div
+              style={{
+                display: 'flex',
+                gap: '0.65rem',
+                alignItems: 'center',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                flexShrink: 1,
+                minWidth: 0,
+              }}
+            >
+              <span className="hidden-mobile" style={{ whiteSpace: 'nowrap', flexShrink: 0, fontWeight: 500 }}>
+                🌿 Repository for Sri Lankan Intangible Cultural Heritage
+              </span>
+              <span className="mobile-only-topbar" style={{ whiteSpace: 'nowrap' }}>
+                🌿 Sri Lanka Intangible Cultural Heritage
+              </span>
+              <span className="hidden-mobile topbar-categories" style={{ color: 'var(--color-accent)', flexShrink: 0 }}>•</span>
+              <span className="hidden-mobile topbar-categories" style={{ whiteSpace: 'nowrap', color: 'rgba(250, 246, 240, 0.85)', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                Art · Crafts · Brassware · Masks · Traditional Medicine · Rituals · Landscapes · Festivals
+              </span>
             </div>
             <div
-              style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}
+              style={{
+                display: 'flex',
+                gap: '1.1rem',
+                alignItems: 'center',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
+              }}
               className="hidden-mobile"
             >
-              <span>📞 +94 11 234 5678</span>
-              <span>✉️ info@intangibleheritage.lk</span>
+              <span style={{ whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+                📞 <a href="tel:0773409787" style={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap' }}>077 340 9787</a> · <a href="tel:0714310000" style={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap' }}>071 431 0000</a>
+              </span>
+              <span style={{ whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+                ✉️ <a href="mailto:info@intangibleheritage.lk" style={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap' }}>info@intangibleheritage.lk</a>
+              </span>
             </div>
           </div>
         </div>
@@ -151,6 +196,14 @@ export default function Navbar() {
                   className={isHomeActive ? 'capsule-btn active' : 'capsule-btn'}
                 >
                   Home
+                </Link>
+
+                {/* About */}
+                <Link
+                  href="/about"
+                  className={isAboutActive ? 'capsule-btn active' : 'capsule-btn'}
+                >
+                  About
                 </Link>
 
                 {/* Museum with Flyout Dropdown */}
@@ -281,14 +334,6 @@ export default function Navbar() {
                   Research
                 </Link>
 
-                {/* About */}
-                <Link
-                  href="/about"
-                  className={isAboutActive ? 'capsule-btn active' : 'capsule-btn'}
-                >
-                  About
-                </Link>
-
                 {/* Contact */}
                 <Link
                   href="/contact"
@@ -299,8 +344,204 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Desktop Right Controls (Clean spacer) */}
-            <div className="hidden-mobile" style={{ width: '42px' }} />
+            {/* Header Right Controls: Cart Icon */}
+            <div
+              className="header-cart-controls"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                zIndex: 10,
+                position: 'relative',
+              }}
+            >
+              {/* Cart Icon & Flyout Container */}
+              <div
+                className="cart-icon-wrapper"
+                style={{ position: 'relative' }}
+                onMouseEnter={() => setCartHovered(true)}
+                onMouseLeave={() => setCartHovered(false)}
+              >
+                <Link
+                  href="/cart"
+                  id="header-cart-icon-btn"
+                  aria-label={`Shopping cart, ${totalItems} items`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '50%',
+                    background: isCartActive || totalItems > 0 ? 'var(--color-brown-50)' : 'transparent',
+                    border: '1.5px solid',
+                    borderColor: totalItems > 0 ? 'var(--color-accent)' : 'rgba(92, 58, 33, 0.2)',
+                    color: 'var(--color-primary)',
+                    position: 'relative',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    cursor: 'pointer',
+                  }}
+                  className="header-cart-btn"
+                  onClick={() => setCartHovered(false)}
+                >
+                  <ShoppingCart size={20} />
+                  {totalItems > 0 && (
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: '-3px',
+                        right: '-3px',
+                        background: '#E08A24',
+                        color: '#ffffff',
+                        fontSize: '0.68rem',
+                        fontWeight: 800,
+                        width: '19px',
+                        height: '19px',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: '0 2px 6px rgba(224, 138, 36, 0.45)',
+                        border: '2px solid #ffffff',
+                      }}
+                    >
+                      {totalItems > 99 ? '99+' : totalItems}
+                    </span>
+                  )}
+                </Link>
+
+                {/* Cart Flyout Preview */}
+                {cartHovered && (
+                  <div
+                    className="cart-flyout-menu"
+                    style={{
+                      position: 'absolute',
+                      top: 'calc(100% + 8px)',
+                      right: 0,
+                      width: '320px',
+                      background: '#ffffff',
+                      borderRadius: '1rem',
+                      boxShadow: '0 16px 40px rgba(43,27,16,0.18), 0 4px 12px rgba(0,0,0,0.06)',
+                      border: '1px solid rgba(201, 166, 107, 0.35)',
+                      padding: '1rem',
+                      zIndex: 100,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.75rem',
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        borderBottom: '1px solid var(--color-brown-50)',
+                        paddingBottom: '0.6rem',
+                      }}
+                    >
+                      <span style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--color-primary)' }}>
+                        Shopping Cart ({totalItems})
+                      </span>
+                      <Link
+                        href="/cart"
+                        onClick={() => setCartHovered(false)}
+                        style={{ fontSize: '0.78rem', color: 'var(--color-accent)', fontWeight: 600, textDecoration: 'none' }}
+                      >
+                        View Cart →
+                      </Link>
+                    </div>
+
+                    {items.length === 0 ? (
+                      <div style={{ textAlign: 'center', padding: '1.25rem 0.5rem', color: 'var(--color-secondary)' }}>
+                        <p style={{ fontSize: '0.86rem', margin: 0 }}>Your cart is empty</p>
+                        <Link
+                          href="/shop"
+                          onClick={() => setCartHovered(false)}
+                          style={{
+                            display: 'inline-block',
+                            marginTop: '0.6rem',
+                            fontSize: '0.8rem',
+                            color: 'var(--color-accent)',
+                            fontWeight: 700,
+                            textDecoration: 'none',
+                          }}
+                        >
+                          Browse Heritage Shop →
+                        </Link>
+                      </div>
+                    ) : (
+                      <>
+                        {/* Items list preview */}
+                        <div style={{ maxHeight: '180px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                          {items.slice(0, 3).map(item => (
+                            <div key={item.id} style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+                              <div style={{ position: 'relative', width: '38px', height: '38px', borderRadius: '0.35rem', overflow: 'hidden', flexShrink: 0 }}>
+                                <Image src={item.image} alt={item.name} fill sizes="38px" style={{ objectFit: 'cover' }} />
+                              </div>
+                              <div style={{ flex: 1, minWidth: 0, fontSize: '0.8rem' }}>
+                                <div style={{ fontWeight: 600, color: 'var(--color-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                  {item.name}
+                                </div>
+                                <div style={{ color: 'var(--color-secondary)', fontSize: '0.74rem' }}>
+                                  {item.quantity} × {formatLKR(item.price)}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                          {items.length > 3 && (
+                            <div style={{ fontSize: '0.75rem', color: 'var(--color-secondary)', textAlign: 'center' }}>
+                              + {items.length - 3} more item{items.length - 3 > 1 ? 's' : ''} in cart
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Total */}
+                        <div
+                          style={{
+                            borderTop: '1px solid var(--color-brown-50)',
+                            paddingTop: '0.5rem',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            fontWeight: 700,
+                            fontSize: '0.88rem',
+                            color: 'var(--color-primary)',
+                          }}
+                        >
+                          <span>Total:</span>
+                          <span style={{ color: 'var(--color-accent)' }}>{formatLKR(totalPrice)}</span>
+                        </div>
+
+                        {/* Bulk WhatsApp Order Button */}
+                        <a
+                          href={whatsappBulkUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          id="flyout-bulk-whatsapp-btn"
+                          onClick={() => setCartHovered(false)}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '0.5rem',
+                            background: '#25D366',
+                            color: '#ffffff',
+                            padding: '0.65rem 1rem',
+                            borderRadius: '0.5rem',
+                            fontSize: '0.86rem',
+                            fontWeight: 700,
+                            textDecoration: 'none',
+                            boxShadow: '0 2px 8px rgba(37, 211, 102, 0.3)',
+                          }}
+                        >
+                          <MessageCircle size={16} /> Send Bulk WhatsApp Order
+                        </a>
+                      </>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
 
 
           </nav>
@@ -706,6 +947,32 @@ export default function Navbar() {
 
         .hidden-mobile {
           display: flex !important;
+        }
+
+        .topbar-categories {
+          display: inline-flex !important;
+        }
+
+        .header-cart-btn:hover {
+          background: var(--color-brown-50) !important;
+          border-color: var(--color-accent) !important;
+          transform: translateY(-1px);
+        }
+
+        .header-whatsapp-btn:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 14px rgba(37, 211, 102, 0.45) !important;
+          background: #20BA5A !important;
+        }
+
+        .cart-icon-wrapper:hover .header-cart-btn {
+          border-color: var(--color-accent) !important;
+        }
+
+        @media (max-width: 1280px) {
+          .topbar-categories {
+            display: none !important;
+          }
         }
 
         @media (max-width: 900px) {

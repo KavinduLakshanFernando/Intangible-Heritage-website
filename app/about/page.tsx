@@ -11,7 +11,7 @@ import SectionBackground from '@/components/decorations/SectionBackground';
 export const metadata: Metadata = {
   title: 'About Us — Preserving Sri Lankan Intangible Cultural Heritage',
   description:
-    'Learn about Intangible Heritage Sri Lanka — our mission, history, and commitment to safeguarding Art, Crafts, Brassware, Masks, Hela Wedakama & Ayurveda, Cultural Landscapes, and Perahera Festivals.',
+    'Learn about Intangible Heritage Sri Lanka — our mission, history, and commitment to safeguarding Art, Crafts, Brassware, Masks, Traditional Medicine, Rituals, Cultural Landscapes, and Perahera Festivals.',
 };
 
 const HERITAGE_TYPES = [
@@ -19,7 +19,8 @@ const HERITAGE_TYPES = [
   { emoji: '🧵', title: 'Crafts & Living Guilds', desc: 'Safeguarding hereditary crafts: Dumbara reed mat weaving, Kelaniya terracotta pottery, handloom textiles, and wood carving.' },
   { emoji: '🪔', title: 'Brassware & Metallurgy', desc: 'Conserving historical brass casting, ceremonial oil lamps (Pahana), ritual trays, and lost-wax metallurgical knowledge.' },
   { emoji: '🎭', title: 'Masks & Ritual Theatre', desc: 'Documenting Kaduru wood carving, Ambalangoda folk masks, Raksha protector masks, Kolam drama, and healing Sanni Yakuma traditions.' },
-  { emoji: '🌿', title: 'Ayurveda & Hela Wedakama', desc: 'Safeguarding 2,500 years of indigenous medicine, King Buddhadasa’s manuscripts (Puskola Poth), Thel Thulāva vessels, and herbal pharmacopeias.' },
+  { emoji: '🌿', title: 'Traditional Medicine & Hela Wedakama', desc: 'Safeguarding 2,500 years of indigenous medicine, King Buddhadasa’s manuscripts (Puskola Poth), Thel Thulāva vessels, and herbal pharmacopeias.' },
+  { emoji: '🕯️', title: 'Rituals & Shanthikarma', desc: 'Safeguarding Kohomba Kankariya, Bali Thovil healing ceremonies, Gam Madu harvest rituals, and sacred spiritual incantations.' },
   { emoji: '🏞️', title: 'Heritage Landscapes', desc: 'Safeguarding historical cultural landscapes: ancient hydraulic cascade tanks (Wewa), Sigiriya water gardens, and Ritigala forest sanctuaries.' },
   { emoji: '🥁', title: 'Perahera & Festival Rituals', desc: 'Documenting the living pageantry of the Kandy Esala Perahera, sacred tooth relic processions, ritual drumming, and island folk celebrations.' },
 ];
@@ -189,7 +190,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Domains of Intangible Heritage (7 Categories) ──────── */}
+      {/* ── Domains of Intangible Heritage (8 Categories) ──────── */}
       <section
         aria-label="Domains of cultural heritage"
         className="heritage-section-relative"
@@ -205,9 +206,9 @@ export default function AboutPage() {
         />
         <div className="container-site heritage-section-content">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-title">Seven Domains of Sri Lankan Cultural Heritage</h2>
+            <h2 className="section-title">Eight Domains of Sri Lankan Cultural Heritage</h2>
             <p className="section-subtitle" style={{ maxWidth: '640px', margin: '0.75rem auto 0' }}>
-              Recognized under UNESCO intangible cultural heritage frameworks, these seven domains represent the living soul and artistic genius of Sri Lanka.
+              Recognized under UNESCO intangible cultural heritage frameworks, these eight domains represent the living soul and artistic genius of Sri Lanka.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.75rem' }}>
@@ -252,7 +253,7 @@ export default function AboutPage() {
             </p>
             <h2 className="section-title">Advisory Council & Board</h2>
             <p className="section-subtitle" style={{ maxWidth: '580px', margin: '0.75rem auto 0' }}>
-              Comprising foremost cultural historians, Ayurvedic doctors, university professors, and heritage conservationists.
+              Comprising foremost cultural historians, traditional medicine doctors, university professors, and heritage conservationists.
             </p>
           </div>
 

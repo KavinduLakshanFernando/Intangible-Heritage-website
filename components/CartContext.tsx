@@ -17,10 +17,13 @@ type CartAction =
   | { type: 'REMOVE'; id: string }
   | { type: 'INCREMENT'; id: string }
   | { type: 'DECREMENT'; id: string }
-  | { type: 'CLEAR' };
+  | { type: 'CLEAR' }
+  | { type: 'SET'; items: CartItem[] };
 
 function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
+    case 'SET':
+      return { items: action.items };
     case 'ADD': {
       const existing = state.items.find(i => i.id === action.product.id);
       if (existing) {
@@ -57,6 +60,7 @@ function cartReducer(state: CartState, action: CartAction): CartState {
 interface CartContextValue {
   items: CartItem[];
   totalItems: number;
+  totalQuantity: number;
   totalPrice: number;
   addToCart: (product: Product) => void;
   removeFromCart: (id: string) => void;
@@ -79,11 +83,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed: CartItem[] = JSON.parse(stored);
-        parsed.forEach(item => {
-          for (let i = 0; i < item.quantity; i++) {
-            dispatch({ type: 'ADD', product: item });
-          }
-        });
+        if (Array.isArray(parsed)) {
+          dispatch({ type: 'SET', items: parsed });
+        }
       }
     } catch {
       // ignore parse errors
@@ -101,12 +103,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const decrementItem = useCallback((id: string) => dispatch({ type: 'DECREMENT', id }), []);
   const clearCart = useCallback(() => dispatch({ type: 'CLEAR' }), []);
 
-  const totalItems = state.items.reduce((sum, i) => sum + i.quantity, 0);
+  const totalItems = state.items.length;
+  const totalQuantity = state.items.reduce((sum, i) => sum + i.quantity, 0);
   const totalPrice = state.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
   return (
     <CartContext.Provider
-      value={{ items: state.items, totalItems, totalPrice, addToCart, removeFromCart, incrementItem, decrementItem, clearCart }}
+      value={{ items: state.items, totalItems, totalQuantity, totalPrice, addToCart, removeFromCart, incrementItem, decrementItem, clearCart }}
     >
       {children}
     </CartContext.Provider>

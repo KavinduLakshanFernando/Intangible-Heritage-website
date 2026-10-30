@@ -4,7 +4,7 @@
     "title": "Thel Thulāva (තෙල් තුලාව) — Antique Brass Oil Pourer",
     "description": "An authentic antique Sri Lankan brass Thel Thulāva, an exquisite ceremonial and medicinal oil dispensing vessel. Historically used by royal physicians and in sacred temple healing rituals to meticulously pour medicated herbal oils during Shirodhara and oil lamp ceremonies.",
     "category": "Medical Implements",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "image": "/images/thel-thulava.jpg",
     "photographer": "National Heritage Medical Archive",
     "year": 2024
@@ -14,7 +14,7 @@
     "title": "Hela Weda Apothecary & Herbarium",
     "description": "A traditional Sri Lankan Hela Wedakama apothecary room, featuring indigenous herbal drying racks, clay fermentation pots, stone grinding mortars (Wangedi), and botanical specimens harvested from sacred sanctuaries such as Ritigala.",
     "category": "Indigenous Medicine",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "image": "/images/hela-wedakama.jpg",
     "photographer": "Institute of Traditional Medicine",
     "year": 2023
@@ -24,7 +24,7 @@
     "title": "Beheth Oruwa (බෙහෙත් ඔරුව) — Ancient Medicinal Canoe",
     "description": "Carved from monolithic stone or hardwood, the Beheth Oruwa (medicinal canoe) was the centrepiece of ancient Sri Lankan monastery hospitals such as Mihintale (9th Century CE). Patients were immersed in warm medicinal herbal decoctions and oils for systemic healing.",
     "category": "Medical Implements",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "image": "/images/beheth-oruwa.jpg",
     "photographer": "Archaeological Survey Department",
     "year": 2024
@@ -34,7 +34,7 @@
     "title": "Puskola Poth (පුස්කොළ පොත්) — Medical Palm-Leaf Manuscripts",
     "description": "Ancient palm-leaf treatises containing sacred medical formulations, written in classical Sinhala script using an iron stylus (Panhinda). Includes copies of Sarartha Sangrahaya composed by King Buddhadasa (4th Century CE), the royal surgeon of Sri Lanka.",
     "category": "Manuscripts",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "image": "/images/puskola-poth.jpg",
     "photographer": "Palm-Leaf Conservation Centre",
     "year": 2023
@@ -44,9 +44,9 @@
     "title": "Thel Sindima & Traditional Medicated Oils (තෛල)",
     "description": "The complex ritual and biochemical preparation of classical Sri Lankan medicated oils (Thailaya), including Pinda, Maha Narayana, and Nilyadi. Extracted using slow clay pot boiling, decoction infusion, and aromatic herbal distillation.",
     "category": "Indigenous Medicine",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "image": "/images/herbal-oils.jpg",
-    "photographer": "Ayurvedic Heritage Research Board",
+    "photographer": "Traditional Medicine Research Board",
     "year": 2024
   },
   {
@@ -54,7 +54,7 @@
     "title": "Maha Kola Sanniya & Healing Ritual Masks",
     "description": "The 18 Sanni healing masks used in traditional Sri Lankan ritual psychotherapy and exorcism (Sanni Yakuma). Each mask represents a specific psychological or physical ailment, used alongside herbal fumigation and mantra recitation for total patient recovery.",
     "category": "Ritual Healing",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Rituals",
     "image": "/images/mask-carving.jpg",
     "photographer": "Southern Folk Theatre & Healing Society",
     "year": 2023
@@ -114,9 +114,19 @@
     "title": "Kandy Esala Perahera — Sacred Procession",
     "description": "Held annually in the sacred hill capital of Kandy, the Esala Perahera features hundreds of caparisoned tuskers, hereditary Ves dancers, torchbearers, and thunderous Geta Bera drummers in a living pageantry paying tribute to the Sacred Tooth Relic.",
     "category": "Processions & Rituals",
-    "heritageCategory": "Perahera & Festivals",
+    "heritageCategory": "Events & Festivals",
     "image": "/images/perahera-festival.jpg",
     "photographer": "Temple of the Tooth Heritage Trust",
+    "year": 2024
+  },
+  {
+    "id": "13",
+    "title": "Kohomba Kankariya & Shanthikarma Sacred Regalia",
+    "description": "Sacred ritual regalia, ceremonial Yak Bera drums, sanctified Aabharana, and coconut-flower altars utilized in the Kohomba Kankariya, Sri Lanka's foundational propitiatory healing ritual dating back to King Panduvasdeva.",
+    "category": "Rituals & Ceremonies",
+    "heritageCategory": "Rituals",
+    "image": "/images/perahera-festival.jpg",
+    "photographer": "National Ritual Arts Archive",
     "year": 2024
   }
 ]

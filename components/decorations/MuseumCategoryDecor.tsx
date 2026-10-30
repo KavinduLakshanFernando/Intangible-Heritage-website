@@ -112,6 +112,19 @@ export default function MuseumCategoryDecor({
       );
     }
 
+    if (normCat.includes('ritual') || normCat.includes('shanthikarma')) {
+      return (
+        <>
+          <div style={leftWrapperStyle} className="animate-arch-float">
+            <MasksIllustration color="#8B5E3C" size={480} />
+          </div>
+          <div style={rightWrapperStyle} className="animate-mandala-drift">
+            <MandalaIllustration position="right" opacity={1} size={520} />
+          </div>
+        </>
+      );
+    }
+
     if (normCat.includes('landscape') || normCat.includes('sigiriya')) {
       return (
         <>

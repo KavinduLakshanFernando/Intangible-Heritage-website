@@ -35,12 +35,13 @@ export default function MuseumClient({ initialItems }: Props) {
     }
   }, [initialCategoryParam]);
 
-  // ── Filter matching logic (with full backward-compatibility for Ayurveda) ──
+  // ── Filter matching logic (with full backward-compatibility for Traditional Medicine & Ayurveda) ──
   const filtered = items.filter(item => {
     if (activeCategory === 'All') return true;
 
-    if (activeCategory === 'Ayurveda') {
+    if (activeCategory === 'Traditional Medicine' || activeCategory === 'Ayurveda') {
       return (
+        item.heritageCategory === 'Traditional Medicine' ||
         item.heritageCategory === 'Ayurveda' ||
         item.category === 'Medical Implements' ||
         item.category === 'Indigenous Medicine' ||

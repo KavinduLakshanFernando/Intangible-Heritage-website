@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       title: item.title,
       description: item.description || '',
       category: item.category || 'General',
-      heritageCategory: item.heritageCategory || 'Ayurveda',
+      heritageCategory: item.heritageCategory || 'Traditional Medicine',
       image: item.image || '/images/hela-wedakama.jpg',
       photographer: item.photographer || '',
       year: item.year ? Number(item.year) : new Date().getFullYear(),
