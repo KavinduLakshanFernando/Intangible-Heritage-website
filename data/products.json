@@ -6,7 +6,7 @@
     "price": 14500,
     "image": "/images/thel-thulava.jpg",
     "category": "Implements",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "inStock": true
   },
   {
@@ -16,7 +16,7 @@
     "price": 6800,
     "image": "/images/herbal-oils.jpg",
     "category": "Medicinal Oils",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "inStock": true
   },
   {
@@ -26,7 +26,7 @@
     "price": 8500,
     "image": "/images/hela-wedakama.jpg",
     "category": "Implements",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "inStock": true
   },
   {
@@ -36,7 +36,7 @@
     "price": 19500,
     "image": "/images/puskola-poth.jpg",
     "category": "Publications",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "inStock": true
   },
   {
@@ -46,7 +46,7 @@
     "price": 4200,
     "image": "/images/beheth-oruwa.jpg",
     "category": "Herbal Teas",
-    "heritageCategory": "Ayurveda",
+    "heritageCategory": "Traditional Medicine",
     "inStock": true
   },
   {
@@ -56,7 +56,7 @@
     "price": 12500,
     "image": "/images/mask-carving.jpg",
     "category": "Ritual Art",
-    "heritageCategory": "Masks",
+    "heritageCategory": "Rituals",
     "inStock": false
   },
   {
@@ -116,7 +116,17 @@
     "price": 7800,
     "image": "/images/perahera-festival.jpg",
     "category": "Cultural Heritage",
-    "heritageCategory": "Perahera & Festivals",
+    "heritageCategory": "Events & Festivals",
+    "inStock": true
+  },
+  {
+    "id": "13",
+    "name": "Handmade Brass Ritual Incense Censer (Dummala Kalaya)",
+    "description": "Authentic hand-cast solid brass ritual censer crafted in Pilimathalawa, designed for resinous incense (Dummala) fumigation in sacred Shanthikarma rituals and temple blessing rites.",
+    "price": 8200,
+    "image": "/images/brassware-craft.jpg",
+    "category": "Ritual Implements",
+    "heritageCategory": "Rituals",
     "inStock": true
   }
 ]

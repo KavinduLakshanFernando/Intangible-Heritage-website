@@ -32,6 +32,7 @@ export type DecorType =
   | 'bo-leaf'
   | 'masks'
   | 'brassware'
+  | 'traditional-medicine'
   | 'ayurveda'
   | 'perahera'
   | 'landscapes'
@@ -199,7 +200,7 @@ export default function SectionBackground({
       );
     }
 
-    if (decor === 'ayurveda') {
+    if (decor === 'traditional-medicine' || decor === 'ayurveda') {
       return wrapSvgDecor(
         <AyurvedaIllustration color={effectiveColor} size={numSize} />,
         position

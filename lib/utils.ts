@@ -21,7 +21,7 @@ export function formatDate(dateStr: string): string {
 
 /** Build a WhatsApp order message URL */
 export function buildWhatsAppUrl(items: { name: string; quantity: number; price: number }[], total: number): string {
-  const phone = '94711234567'; // Replace with your actual WhatsApp number
+  const phone = '94773409787'; // WhatsApp contact
   const lines = items.map(i => `• ${i.name} × ${i.quantity} — LKR ${i.price.toLocaleString()}`);
   const message = [
     'Hello Intangible Heritage,',

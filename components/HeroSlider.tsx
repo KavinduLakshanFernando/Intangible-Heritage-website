@@ -3,7 +3,7 @@
 /**
  * components/HeroSlider.tsx
  * Hero banner with auto-sliding background showcasing Sri Lankan cultural heritage:
- * Art, Heritage Landscapes, Brassware, Perahera & Festivals, and Hela Wedakama.
+ * Art, Heritage Landscapes, Brassware, Events & Festivals, and Hela Wedakama.
  */
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
@@ -162,7 +162,7 @@ export default function HeroSlider() {
                 maxWidth: '620px',
               }}
             >
-              Dedicated to safeguarding, documenting, and celebrating the living soul of Sri Lanka — from classical temple art, master handicrafts, brassware, and ritual masks to ancient Hela Wedakama & Ayurveda, sacred landscapes, and majestic peraheras.
+              Dedicated to safeguarding, documenting, and celebrating the living soul of Sri Lanka — from classical temple art, master handicrafts, brassware, and ritual masks to ancient Hela Wedakama & traditional medicine, sacred landscapes, and majestic peraheras.
             </p>
 
             {/* Call To Actions */}
