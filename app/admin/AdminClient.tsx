@@ -418,7 +418,7 @@ export default function AdminClient({
                 Sri Lankan Heritage Categories
               </h2>
               <p style={{ fontSize: '0.86rem', color: 'var(--color-secondary)' }}>
-                Manage the seven core cultural heritage categories, imagery, and narrative descriptions.
+                Manage the eight core cultural heritage categories, imagery, and narrative descriptions.
               </p>
             </div>
           </div>
@@ -543,7 +543,7 @@ export default function AdminClient({
                 Museum Exhibits & Sacred Artifacts
               </h2>
               <p style={{ fontSize: '0.86rem', color: 'var(--color-secondary)' }}>
-                Assign exhibits to heritage categories, upload photos, and manage records while preserving all Ayurveda items.
+                Assign exhibits to heritage categories, upload photos, and manage records while preserving all Traditional Medicine items.
               </p>
             </div>
             <button
@@ -551,7 +551,7 @@ export default function AdminClient({
                 title: '',
                 description: '',
                 category: 'General',
-                heritageCategory: 'Ayurveda',
+                heritageCategory: 'Traditional Medicine',
                 image: '/images/traditional-art.jpg',
                 photographer: '',
                 year: new Date().getFullYear(),
@@ -587,7 +587,7 @@ export default function AdminClient({
                       {item.title}
                     </td>
                     <td style={{ padding: '0.65rem 1rem' }}>
-                      <span className="badge">{item.heritageCategory || 'Ayurveda'}</span>
+                      <span className="badge">{item.heritageCategory || 'Traditional Medicine'}</span>
                     </td>
                     <td style={{ padding: '0.65rem 1rem', color: 'var(--color-secondary)' }}>
                       {item.category}
@@ -643,7 +643,7 @@ export default function AdminClient({
                     <div>
                       <label style={{ fontSize: '0.85rem', fontWeight: 600, display: 'block', marginBottom: '0.25rem' }}>Heritage Category</label>
                       <select
-                        value={editingMuseum.heritageCategory || 'Ayurveda'}
+                        value={editingMuseum.heritageCategory || 'Traditional Medicine'}
                         onChange={e => setEditingMuseum({ ...editingMuseum, heritageCategory: e.target.value as HeritageCategory })}
                         className="form-input"
                         style={{ width: '100%', padding: '0.6rem 0.85rem' }}
@@ -744,7 +744,7 @@ export default function AdminClient({
                 Shop Products & Traditional Goods
               </h2>
               <p style={{ fontSize: '0.86rem', color: 'var(--color-secondary)' }}>
-                Manage crafts, artwork, brassware, masks, and Ayurvedic products while retaining pricing and cart compatibility.
+                Manage crafts, artwork, brassware, masks, and traditional medicine products while retaining pricing and cart compatibility.
               </p>
             </div>
             <button
@@ -931,7 +931,7 @@ export default function AdminClient({
                 date: new Date().toISOString().split('T')[0],
                 venue: 'Colombo, Sri Lanka',
                 category: 'Workshop',
-                heritageCategory: 'Perahera & Festivals',
+                heritageCategory: 'Events & Festivals',
                 status: 'upcoming',
                 image: '/images/perahera-festival.jpg',
               })}
@@ -1029,7 +1029,7 @@ export default function AdminClient({
                     <div>
                       <label style={{ fontSize: '0.85rem', fontWeight: 600, display: 'block', marginBottom: '0.25rem' }}>Heritage Category</label>
                       <select
-                        value={editingEvent.heritageCategory || 'Perahera & Festivals'}
+                        value={editingEvent.heritageCategory || 'Events & Festivals'}
                         onChange={e => setEditingEvent({ ...editingEvent, heritageCategory: e.target.value as HeritageCategory })}
                         className="form-input"
                         style={{ width: '100%', padding: '0.6rem 0.85rem' }}
@@ -1109,7 +1109,7 @@ export default function AdminClient({
                 Research & Scholarly Publications
               </h2>
               <p style={{ fontSize: '0.86rem', color: 'var(--color-secondary)' }}>
-                Manage academic papers across all seven cultural heritage categories.
+                Manage academic papers across all eight cultural heritage categories.
               </p>
             </div>
             <button
@@ -1149,7 +1149,7 @@ export default function AdminClient({
                       {a.title}
                     </td>
                     <td style={{ padding: '0.65rem 1rem' }}>
-                      <span className="badge">{a.heritageCategory || 'Ayurveda'}</span>
+                      <span className="badge">{a.heritageCategory || 'Traditional Medicine'}</span>
                     </td>
                     <td style={{ padding: '0.65rem 1rem', color: 'var(--color-secondary)' }}>
                       {a.author}

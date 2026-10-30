@@ -148,10 +148,10 @@ export default function Footer() {
             </h3>
             <address style={{ fontStyle: 'normal', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {[
-                { icon: MapPin, text: 'No. 12, Sri Jayawardenepura Mawatha,\nNugegoda, Colombo, Sri Lanka' },
-                { icon: Phone, text: '+94 11 234 5678\n+94 77 123 4567' },
+                { icon: MapPin, text: '116, D. S. Senanayake Mawatha,\nColombo 08, Sri Lanka' },
+                { icon: Phone, text: '077 340 9787\n071 431 0000' },
                 { icon: Mail,  text: 'info@intangibleheritage.lk' },
-                { icon: Clock, text: 'Mon – Fri: 9:00 am – 5:00 pm\nSat: 9:00 am – 1:00 pm' },
+                { icon: Clock, text: 'By Appointment Only' },
               ].map(({ icon: Icon, text }, i) => (
                 <div key={i} style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
                   <Icon size={15} style={{ color: 'var(--color-accent)', marginTop: '2px', flexShrink: 0 }} />
@@ -177,7 +177,7 @@ export default function Footer() {
           color: 'rgba(255,255,255,0.5)',
         }}>
           <p style={{ margin: 0 }}>
-            © 2026 Intangible Heritage Sri Lanka. All rights reserved. Safeguarding living traditions, arts, and Ayurveda.
+            © 2026 Intangible Heritage Sri Lanka. All rights reserved. Safeguarding living traditions, arts, and traditional medicine.
           </p>
           <div style={{ display: 'flex', gap: '1.25rem' }}>
             <Link href="/about" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>About Us</Link>

@@ -9,7 +9,7 @@
     "image": "/images/herbal-oils.jpg",
     "status": "upcoming",
     "category": "Masterclass",
-    "heritageCategory": "Ayurveda"
+    "heritageCategory": "Traditional Medicine"
   },
   {
     "id": "2",
@@ -21,7 +21,7 @@
     "image": "/images/puskola-poth.jpg",
     "status": "upcoming",
     "category": "Workshop",
-    "heritageCategory": "Ayurveda"
+    "heritageCategory": "Traditional Medicine"
   },
   {
     "id": "3",
@@ -33,7 +33,7 @@
     "image": "/images/beheth-oruwa.jpg",
     "status": "upcoming",
     "category": "Symposium",
-    "heritageCategory": "Ayurveda"
+    "heritageCategory": "Traditional Medicine"
   },
   {
     "id": "4",
@@ -45,7 +45,7 @@
     "image": "/images/hela-wedakama.jpg",
     "status": "past",
     "category": "Field Research",
-    "heritageCategory": "Ayurveda"
+    "heritageCategory": "Traditional Medicine"
   },
   {
     "id": "5",
@@ -57,7 +57,7 @@
     "image": "/images/thel-thulava.jpg",
     "status": "past",
     "category": "Exhibition",
-    "heritageCategory": "Ayurveda"
+    "heritageCategory": "Traditional Medicine"
   },
   {
     "id": "6",
@@ -69,7 +69,7 @@
     "image": "/images/mask-carving.jpg",
     "status": "past",
     "category": "Archive Launch",
-    "heritageCategory": "Ayurveda"
+    "heritageCategory": "Rituals"
   },
   {
     "id": "7",
@@ -141,6 +141,18 @@
     "image": "/images/perahera-festival.jpg",
     "status": "past",
     "category": "Perahera Program",
-    "heritageCategory": "Perahera & Festivals"
+    "heritageCategory": "Events & Festivals"
+  },
+  {
+    "id": "13",
+    "title": "Kohomba Kankariya & Shanthikarma Living Ritual Symposium",
+    "date": "2027-03-12",
+    "endDate": "2027-03-14",
+    "venue": "National Heritage Amphitheatre, Kandy",
+    "description": "An immersive three-day symposium and live demonstration showcasing sacred Kohomba Kankariya rituals, Yak Bera drumming cadences, and ancestral healing chants by hereditary ritual masters.",
+    "image": "/images/perahera-festival.jpg",
+    "status": "upcoming",
+    "category": "Symposium",
+    "heritageCategory": "Rituals"
   }
 ]

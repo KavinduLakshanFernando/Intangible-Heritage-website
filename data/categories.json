@@ -40,14 +40,24 @@
     "focusAreas": ["Ambalangoda Folk Masks", "Raksha (Guardian) Masks", "Kolam Drama Masks", "Sanni Healing Masks"]
   },
   {
-    "id": "ayurveda",
-    "slug": "ayurveda",
-    "name": "Ayurveda",
+    "id": "traditional-medicine",
+    "slug": "traditional-medicine",
+    "name": "Traditional Medicine",
     "shortDescription": "Hela Wedakama, indigenous medicine, herbal remedies, sacred Thel Thulāva vessels, and healing texts.",
     "description": "Sri Lanka's indigenous healing science, Hela Wedakama, integrates 2,500 years of unbroken medical lineages, royal hospital architecture at Mihintale, sacred Thel Thulāva brass pourers, cured palm-leaf medical manuscripts (Puskola Poth), and restorative medicated oils.",
     "image": "/images/hela-wedakama.jpg",
     "icon": "🌿",
     "focusAreas": ["Hela Wedakama", "Thel Thulāva Vessels", "Puskola Poth Manuscripts", "Thel Sindima (Medicated Oils)"]
+  },
+  {
+    "id": "rituals",
+    "slug": "rituals",
+    "name": "Rituals",
+    "shortDescription": "Ancient Shanthikarma healing ceremonies, Kohomba Kankariya, sacred Bali Thovil rites, and blessing ceremonies.",
+    "description": "Sri Lanka's sacred rituals and Shanthikarma traditions preserve millennia of esoteric knowledge, sacred chants, ritual drumming, and symbolic enactments. From the royal Kohomba Kankariya to community harvest ceremonies (Gam Madu, Devol Madu), rituals unite spiritual healing, hereditary performing arts, and community wellbeing.",
+    "image": "/images/mask-carving.jpg",
+    "icon": "🕯️",
+    "focusAreas": ["Kohomba Kankariya", "Shanthikarma Healing", "Devol & Gam Madu", "Sacred Bali Thovil Ceremonies"]
   },
   {
     "id": "heritage-landscapes",
@@ -62,7 +72,7 @@
   {
     "id": "perahera-festivals",
     "slug": "perahera-festivals",
-    "name": "Perahera & Festivals",
+    "name": "Events & Festivals",
     "shortDescription": "Kandy Esala Perahera, traditional processions, ritual drumming, Vesak celebrations, and folk festivals.",
     "description": "The grand cultural processions of Sri Lanka, most famously the Kandy Esala Perahera, bring sacred rituals to life with hereditary drummers, whip-crackers, fire dancers, adorned elephants, and Ves dancers in homage to the Sacred Tooth Relic and guardian deities.",
     "image": "/images/perahera-festival.jpg",

@@ -13,7 +13,7 @@ import SectionBackground from '@/components/decorations/SectionBackground';
 export const metadata: Metadata = {
   title: 'Shop — Authentic Traditional Crafts, Art, Brassware, Masks & Apothecary',
   description:
-    'Purchase authentic Sri Lankan heritage crafts, traditional paintings, brassware, folk masks, and Ayurvedic products. Support hereditary artisans and preserve living traditions.',
+    'Purchase authentic Sri Lankan heritage crafts, traditional paintings, brassware, folk masks, and traditional medicine products. Support hereditary artisans and preserve living traditions.',
 };
 
 export default function ShopPage() {

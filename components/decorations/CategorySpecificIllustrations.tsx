@@ -298,7 +298,7 @@ export function BrasswareIllustration({ color = '#8B5E3C', size = 440, className
  * AyurvedaIllustration
  * Sacred Thel Thulāva oil vessel, medicinal herb branches (Nelum, Aralu), and Puskola palm-leaf texts.
  */
-export function AyurvedaIllustration({ color = '#8B5E3C', size = 440, className = '' }: IllustrationBaseProps) {
+export function TraditionalMedicineIllustration({ color = '#8B5E3C', size = 440, className = '' }: IllustrationBaseProps) {
   return (
     <svg
       width={size}
@@ -393,10 +393,14 @@ export function AyurvedaIllustration({ color = '#8B5E3C', size = 440, className 
   );
 }
 
+
+
 /**
  * PeraheraIllustration
  * Sacred Kandy Esala Perahera Tusker (Raja Hasthi) with casket canopy & Geta-Bera drums.
  */
+export const AyurvedaIllustration = TraditionalMedicineIllustration;
+
 export function PeraheraIllustration({ color = '#8B5E3C', size = 440, className = '' }: IllustrationBaseProps) {
   return (
     <svg
@@ -528,6 +532,8 @@ export function PeraheraIllustration({ color = '#8B5E3C', size = 440, className 
     </svg>
   );
 }
+
+
 
 /**
  * LandscapesIllustration
@@ -683,3 +689,5 @@ export function CraftsIllustration({ color = '#8B5E3C', size = 440, className = 
     </svg>
   );
 }
+
+

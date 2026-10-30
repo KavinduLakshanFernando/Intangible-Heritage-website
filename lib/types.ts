@@ -5,18 +5,21 @@ export type HeritageCategory =
   | 'Crafts'
   | 'Brassware'
   | 'Masks'
-  | 'Ayurveda'
+  | 'Traditional Medicine'
+  | 'Rituals'
   | 'Heritage Landscapes'
-  | 'Perahera & Festivals';
+  | 'Events & Festivals'
+  | 'Ayurveda';
 
 export const HERITAGE_CATEGORIES: HeritageCategory[] = [
   'Art',
   'Crafts',
   'Brassware',
   'Masks',
-  'Ayurveda',
+  'Traditional Medicine',
+  'Rituals',
   'Heritage Landscapes',
-  'Perahera & Festivals',
+  'Events & Festivals',
 ];
 
 export interface HeritageCategoryItem {
